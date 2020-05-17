@@ -1,0 +1,43 @@
+\section{Práctica 1}
+
+\setcounter{subsection}{3}
+\subsection{}
+\subsubsection{}
+Convertir los estados finales en no fianles y viceversa. Creo que es necesario que sea deterministico
+
+\subsubsection{}
+Convertir el estado inicial en final para permitir la cadena nula, pero tener precaucion con automatas que vuelvan al estado inicial, en ese caso habra que crear un estado aparte. Luego hacer que todos los estados finales tengan las mismas transiciones que el estado inicial, lo cual haria que una vez que se llego a una cadena aceptada por el automata, comience a leer las siguiente parte de la cadena, como si estuvieran concatenadas, como sucede en $L^*$
+
+\subsubsection{}
+Hacer el estado inicial el estado final y los estados finales el inicial (puede transformarse en no deterministico)
+
+\subsubsection{}
+Hacer que todos los estados anteriores al estado final, sean finales. Tener cuidado si el estado final puede volver a uno anterior, en ese caso se deben crear nuevos estados
+
+\subsubsection{}
+Convertirlo como en el de cadenas iniciales del ejercicio anterior, pero luego de haberlo convertido en la reversa
+
+\subsubsection{}
+Convertirlo en iniciales de finales
+
+\subsubsection{}
+Convertir en no finales los estados finales que vayan a cualquier estado que no sea el trampa, incluidos ellos mismos
+
+\subsubsection{}
+Hacer que todos los estados finales lleven al trampa
+
+\subsubsection{}
+Hacer que todos los finales redirijan a ellos mismos siempre
+
+\subsection{}
+\subsubsection{}
+Se genera un estado inicial que se dirige mediante $\lambda$ a ambos estados iniciales de $L_1$ y $L_2$. Es no deterinístico
+
+\subsubsection{}
+Se hace el complemento de la union de los complementos de $L_1$ y $L_2$ ya que $L_1 \cap L_2 = \neg (\neg L_1 \cup \neg L_2)$
+
+\subsubsection{}
+Los estados finales de $L_1$ pasan a ser no finales
+
+\subsubsection{}
+Se hace el complemento de la union entre $L_2$ y el complemento de $L_1$ ya que $L_1 \ L_2 = \neg (L_2 \cup \neg L_1)$

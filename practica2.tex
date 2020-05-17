@@ -1,0 +1,139 @@
+\section{Práctica 2}
+
+\setcounter{subsection}{1}
+\subsection{}
+
+\subsubsection{}
+$\partial_1(10^*1) = 0^*1$
+
+\subsubsection{}
+$\partial_\lambda(10^*1) = 10^*1$
+
+\subsubsection{}
+$\partial_0(10^*1) = \emptyset$
+
+\subsubsection{}
+$\partial_a(ab^*|ac|c^+) = b^*|c$
+
+\subsubsection{}
+$\partial_a(a^+ba) = \partial_a(aa^*ba) = a^*ba$
+
+\subsubsection{}
+$\partial_a(a^*ba) = \partial_a(a^*)ba | \epsilon(a^*)\partial_a(ba) = a^*ba|\emptyset = a^*ba$
+
+\subsubsection{}
+$\partial_{01}(0(1|\lambda)|1^+) = \partial_1(\partial_0(0(1|\lambda)|1^+)) = \partial_1(\partial_0(0(1|\lambda))|\partial_0(1^+)) = \partial_1(\partial_0(0(1|\lambda))|\emptyset)) = \partial_1(\partial_0(0(1|\lambda))) = \partial_1(1|\lambda) = \lambda$
+
+\subsection{}
+\subsubsection{}
+\begin{tabular}{l l}
+	$\partial_0(L_0)$ & $= \partial_0((0|1)^*01)$ \\
+					  & $= \partial_0((0|1)^*)01 | \epsilon((0|1)^*)\partial_0(01)$ \\
+					  & $= \partial_0(0|1)(0|1)^*01 | \partial_0(01)$ \\
+					  & $= (0|1)^*01 | 1$ \\
+					  & $= L_1$ \\
+
+	$\partial_1(L_0)$ & $= \partial_1((0|1)^*01)$ \\
+					  & $= \partial_1((0|1)^*)01 | \epsilon((0|1)^*)\partial_1(01)$ \\
+					  & $= \partial_1(0|1)(0|1)^*01 | \partial_1(01)$ \\
+					  & $= (0|1)^*01 | \emptyset$ \\
+					  & $= (0|1)^*01$ \\
+					  & $= L_0$ \\
+
+	$\partial_0(L_1)$ & $= \partial_0((0|1)^*01 | 1)$ \\
+					  & $= \partial_0((0|1)^*01) | \partial_0(1)$ \\
+					  & $= \partial_0((0|1)^*01)$ \\
+					  & $= \partial_0(L_0)$ \\
+					  & $= L_1$ \\
+
+	$\partial_1(L_1)$ & $= \partial_1((0|1)^*01 | 1)$ \\
+					  & $= \partial_1((0|1)^*01) | \partial_1(1)$ \\
+					  & $= \partial_1((0|1)^*01) | \lambda$ \\
+					  & $= \partial_1((0|1)^*)01 | \epsilon((0|1)^*)\partial_1(01) | \lambda$ \\
+					  & $= \partial_1((0|1)^*)01 | \epsilon((0|1)^*)\emptyset | \lambda$ \\
+					  & $= \partial_1((0|1)^*)01 | \lambda$ \\
+					  & $= \partial_1(0|1)(0|1)^*01 | \lambda$ \\
+					  & $= (0|1)^*01 | \lambda$ \\
+					  & $= L_2$ \\
+
+	$\partial_0(L_2)$ & $= \partial_0((0|1)^*01 | \lambda)$ \\
+					  & $= \partial_0((0|1)^*01)$ \\
+					  & $= \partial_0(L_0)$ \\
+					  & $= L_1$ \\
+
+	$\partial_1(L_2)$ & $= \partial_1((0|1)^*01 | \lambda)$ \\
+					  & $= \partial_1((0|1)^*01)$ \\
+					  & $= \partial_1(L_0)$ \\
+					  & $= L_0$ \\
+\end{tabular} 
+
+\subsubsection{}
+\begin{tabular}{l l}
+	$\partial_a(L_0)$ & $= \partial_a(a(b|\lambda)|b^+)$ \\
+					  & $= \partial_a(a(b|\lambda)) | \partial_a(b+)$ \\
+					  & $= b | \lambda $ \\
+					  & $= L_1$ \\
+
+	$\partial_b(L_0)$ & $= \partial_b(a(b|\lambda)|b^+)$ \\
+					  & $= \partial_b(a(b|\lambda)) | \partial_b(b+)$ \\
+					  & $= \partial_b(b+)$ \\
+					  & $= b^*$ \\
+					  & $= L_2$ \\
+
+	$\partial_a(L_1)$ & $= \partial_a(b | \lambda)$ \\
+					  & $= \emptyset$ \\
+					  & $L_T$ \\
+
+	$\partial_b(L_1)$ & $= \partial_b(b | \lambda)$ \\
+					  & $= \lambda$ \\
+					  & $= L_3$ \\
+
+	$\partial_a(L_2)$ & $= \partial_a(b^*)$ \\
+					  & $= \emptyset$ \\
+					  & $L_T$ \\
+
+	$\partial_b(L_2)$ & $= \partial_b(b^*)$ \\
+					  & $= b^*$ \\
+					  & $L_2$ \\
+
+	$\partial_a(L_3)$ & $= \partial_a(\lambda)$ \\
+					  & $= \emptyset$ \\
+					  & $L_T$ \\
+
+	$\partial_b(L_3)$ & $= \partial_b(\lambda)$ \\
+					  & $= \emptyset$ \\
+					  & $L_T$ \\
+\end{tabular}
+
+\subsection{}
+\subsubsection{}
+\begin{tabular}{l l}
+$L_0$ & $= a.L_1 | b.L_1 = (a|b).L_1$ \\
+
+$L_1$ & $= a.L_1 | b.L_0 | \lambda$ \\
+	  & $= a.L_1 | b.(a|b).L_1 | \lambda$ \\
+	  & $= a.L_1 | (b.(a|b).L_1 | \lambda)$ \\
+	  & $= a^*b.(a|b).L_1 | a^*\lambda$ \\
+	  & $= (a^*b.(a|b))^*.a^*\lambda$ \\
+	  & $= (a^*b.(a|b))^*.a^*$ \\
+	  & $= (a^*ba|a^*bb)^*.a^*$ \\
+
+$L_0$ & $= (a|b)(a^*ba|a^*bb)^*a^*$ \\
+\end{tabular}
+
+\subsubsection{}
+\begin{tabular}{l l}
+$L_1$ & $= a.L_2 | b.L_3$ \\
+
+$L_2$ & $= a.L_1 | b.L_2 | \lambda$ \\
+
+$L_3$ & $= (a|b).L_2$ \\
+
+$L_1$ & $= a.L_2 | b(a|b).L2 = (a|b(a|b)).L_2$ \\
+
+$L_2$ & $= a(a|b(a|b)).L_2 | b.L_2 | \lambda$ \\
+	  & $= (a(a|b(a|b))| b).L_2 | \lambda$ \\
+	  & $= (a(a|b(a|b))| b)^*$ \\
+
+$L_1$ & $= (a|b(a|b))(a(a|b(a|b))| b)^*$ \\
+\end{tabular}

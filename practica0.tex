@@ -1,0 +1,194 @@
+\setcounter{section}{-1}
+\section{Práctica 0}
+\subsection{}
+$\Sigma^0 = \{\lambda\}$
+
+$\Sigma^1 = \Sigma = \{a, b\}$
+
+$\Sigma^2 = \Sigma . \Sigma = \{aa, ab, ba, bb\}$
+
+$\Sigma^* = \cup_{i \geq 0} \Sigma^i = \{\lambda, a, b, aa, bb, ab, bb, aaa, \ldots\}$
+
+$\Sigma^+ = \cup_{i \geq 1} \Sigma^i = \{a, b, aa, bb, ab, bb, aaa, \ldots\}$
+
+$|\Sigma| = 2$
+
+$|\Sigma^0| = 1$
+
+\subsection{}
+$x^0 = \lambda$
+
+$x^1 = abb$
+
+$x^2 = abbabb$
+
+$x^3 = abbabbabb$
+
+$x^0.x^1.x^2.x^3 = abbabbabbabbabbabb$
+
+$x^r = bba$
+
+\subsection{}
+\subsubsection{}
+Falso
+
+\subsubsection{}
+Falso. $\lambda$ ni siquiera es un conjunto
+
+\subsubsection{}
+Falso
+
+\subsubsection{}
+Verdadero
+
+\subsubsection{}
+Verdadero
+
+\subsubsection{}
+Falso
+
+\subsection{}
+$xy = abbacb$
+
+$(xy)^r = cbabba$
+
+$y^r = cba$
+
+$y^rx^r = cbabba$
+
+$\lambda x = abb$
+
+$\lambda y = abc$
+
+$x \lambda y = abbabc$
+
+$x^2 \lambda^3 y^2 = abbabbabcabc$
+
+\subsection{}
+$\Sigma \cup A = \{a,b,c\}$
+
+$\Sigma \cap A = \{a\}$
+
+$\Sigma . A = \{aa, ac, ba, bc\}$
+
+$\Sigma . A^+ = \{aa, ba, ac, bc, aaa, baa, aca, bca, \ldots\}$
+
+$\Sigma^+ . A = \{aa, ba, ac, bc, aaa, baa, aba, abc, \ldots\}$
+
+$(\Sigma . A)^+ = \{aa, ac, ba, bc, aaaa, aaac, aaba, aabc, acaa, acac, acba, acbc, \ldots\}$
+
+$(\Sigma . A)^* = \{\lambda, aa, ac, ba, bc, aaaa, aaac, aaba, aabc, acaa, acac, acba, acbc, \ldots\}$
+
+$\Sigma^* . A^* = \{\lambda, aa, ac, ba, bc, aaa, aac, aba, abc, baa, bac, bba, bbc, aca, acc, bca, bcc, \ldots\}$
+
+$\Sigma . \Lambda . A = \Sigma . A = \{aa, ac, ba, bc\}$
+
+\subsection{}
+\subsubsection{}
+Verdadero
+
+\subsubsection{}
+Verdadero
+
+\subsubsection{}
+Verdadero
+
+\subsubsection{}
+Verdadero
+
+\subsubsection{}
+Falso
+
+\subsubsection{}
+Verdadero
+
+\subsubsection{}
+Verdadero
+
+\subsubsection{}
+Verdadero
+
+\subsection{}
+\subsubsection{}
+a, b, $\lambda$, aa, ab
+
+\subsubsection{}
+a, b, aa, ab
+
+\subsubsection{}
+b, ab, bb, abb, aabb
+
+\subsubsection{}
+a, ab, aa, aab, aabb
+
+\subsubsection{}
+acbabbabbab, aacbabbabbab, aaaaacbabbabbab, aaaaacacbabbabbabbab
+
+\subsubsection{}
+$\lambda$, aaa, aba, abb, bab, baa, aaaaba, baaabb, bababa, bbbbbbb
+
+\subsubsection{}
+aa, bb, abba, bbbb, aaaa, baab
+
+\subsubsection{}
+a, b, aa, bb, aaaa, abba, baab, bbbb
+
+\subsection{}
+$L_1 = \{a^kb^k | k \geq 1\}$
+
+$L_2 = \{a^{2k}b^k | k \geq 1\}$
+
+$L_3 = \{a^kbc^k | k \geq 3\}$
+
+\subsection{}
+\subsubsection{}
+$|a . (a . \alpha) = 1 + |a . \alpha| = 2 + |\alpha|$
+
+\subsection{}
+\subsubsection{}
+Quiero ver que $\forall \alpha (\alpha \in F(F(A)) \Leftrightarrow \alpha \in F(A))$
+
+\begin{tabular}{l l}
+    $\alpha \in F(F(A))$ & $ \Leftrightarrow \exists \beta (\beta \alpha \in F(A)) $ \\
+                         & $ \Leftrightarrow \exists \beta \exists \gamma (\gamma \beta \alpha \in A) $ \\
+                         & $ \Leftrightarrow \exists \phi (\phi \in A)$ tal que $\phi = \gamma \beta $ \\
+\end{tabular}
+
+\subsubsection{}
+Quiero ver que $\forall \alpha (\alpha \in F(F(A)) \Leftrightarrow \alpha \in F(A))$
+
+\begin{tabular}{l l}
+    $\alpha \in S(S(A))$ & $ \Leftrightarrow \exists \beta (\alpha \beta \in S(A)) $ \\
+                         & $ \Leftrightarrow \exists \beta \exists \gamma (\alpha \beta \gamma \in A) $ \\
+                         & $ \Leftrightarrow \exists \phi (\phi \alpha \in A)$ tal que $\phi = \gamma \beta $ \\
+\end{tabular}
+
+\subsubsection{}
+Quiero ver que $\forall \alpha (\alpha \in F(AB) \Leftrightarrow \alpha \in F(B) \lor \alpha \in F(A)B)$
+
+$\Rightarrow )$
+
+\begin{tabular}{l l}
+    $\alpha \in F(AB)$ & $\Rightarrow \exists w (w \alpha \in AB)$ \\
+                       & $\Rightarrow wxyz \in AB $ con $xyz = \alpha$ \\
+                       & $\Rightarrow (w \in A \land xyz \in B) \lor (wx \in A \land yz \in B) \lor (wxy \in A \land z \in B)$ \\
+                       & $\Rightarrow (xyz \in B) \lor (x \in F(A) \land yz \in B) \lor (xy \in (F(A) \land z \in B))$ \\
+                       & $\Rightarrow (xyz \in B) \lor (xyz \in F(A)B) \lor (xyz \in F(A)B)$ \\
+                       & $\Rightarrow (xyz \in B) \lor (xyz \in F(A)B)$ \\
+                       & $\Rightarrow (\alpha \in B) \lor (\alpha \in F(A)B)$ \\
+                       & $\Rightarrow (\alpha \in F(B) \lor (\alpha \in F(A)B)$ \\
+\end{tabular}
+
+$\Leftarrow )$
+
+\begin{tabular}{l l}
+    $\alpha \in F(B)$ & $\Rightarrow \exists \beta (\beta \alpha \in B)$ \\
+                      & $\Rightarrow \exists \gamma (\gamma \beta \alpha \in AB)$ con $\gamma \in A$ \\
+                      & $\Rightarrow \alpha \in F(AB)$ \\
+
+    $\alpha \in F(A)B$ & $\Rightarrow$ reemplazando $\alpha$ por $yz$, $yz \in F(A)B$ con $y \in F(A), z \in B$ \\
+                       & $\Rightarrow \exists x (xy \in A)$ \\
+                       & $\Rightarrow xyz \in AB$ \\
+                       & $\Rightarrow x \alpha \in AB$ \\
+                       & $\Rightarrow \alpha \in F(AB)$ \\
+\end{tabular}
