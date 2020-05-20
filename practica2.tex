@@ -244,3 +244,46 @@ $L_0$ & $= a.L_1 | b.L_3 | \lambda$ \\
 Por lo tanto $I(L) = ac(bc)^* | a | bacc(bc)^* | bac | ba$ y $I(L)^* = (ac(bc)^* | a | bacc(bc)^* | bac | ba)^*$
 
 \subsection{}
+Es necesario primero pasarlo a deterministico:
+
+\begin{tabular}{c | c | c | c}
+	& a 	& b 	& c 	\\
+\hline
+0 	& 01 	& T 	& T 	\\
+01 	& 012 	& T 	& T 	\\
+012	& 012 	& 2 	& T 	\\
+2 	& T 	& 2 	& T 	\\
+T 	& T 	& T 	& T 	\\ \\
+\end{tabular}
+
+Con estados finales $F = \{012, 2\}$
+
+Luego obtenemos $L^c$ simplemente invirtiendo los estados finales $F^c = \{0, 01, T\}$
+
+Ahora hacemos las ecuaciones para determinar la expresion regular de $L^c$
+
+\begin{tabular}{l l}
+$L_0$ & $= a.L_{01} | (b|c).L_T | \lambda$ \\ \\
+
+$L_{01}$ & $= a.L_{012} | (b|c).L_T | \lambda$ \\ \\
+
+$L_{012}$ & $= a.L_{012} | b.L_2 |c.L_T$ \\ \\
+
+$L_2$ & $= b.L_{2} | (a|c).L_T$ \\ \\
+
+$L_T$ & $= (a|b|c).L_T | \lambda$ \\
+	  & $= (a|b|c)^*$ \\ \\
+
+$L_2$ & $= b.L_{2} | (a|c).L_T$ \\
+	  & $= b.L_{2} | (a|c)(a|b|c)^*$ \\
+	  & $= b^*(a|c)(a|b|c)^*$ \\ \\
+
+$L_{012}$ & $= a.L_{012} | b.L_2 |c.L_T$ \\
+		  & $= a.L_{012} | bb^*(a|c)(a|b|c)^* | c(a|b|c)^*$ \\
+		  & $= a^*(bb^*(a|c)(a|b|c)^* | c(a|b|c)^*)$ \\ \\
+
+$L_{01}$ & $= a.L_{012} | (b|c).L_T | \lambda$ \\
+		 & $= aa^*(bb^*(a|c)(a|b|c)^* | c(a|b|c)^*) | (b|c)(a|b|c)^* | \lambda$ \\ \\
+
+$L_0$ & $= a(aa^*(bb^*(a|c)(a|b|c)^* | c(a|b|c)^*) | (b|c)(a|b|c)^* | \lambda) | (b|c)(a|b|c)^* | \lambda$ \\ \\
+\end{tabular}
