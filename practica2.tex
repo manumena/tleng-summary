@@ -108,7 +108,7 @@ $\partial_{01}(0(1|\lambda)|1^+) = \partial_1(\partial_0(0(1|\lambda)|1^+)) = \p
 \subsection{}
 \subsubsection{}
 \begin{tabular}{l l}
-$L_0$ & $= a.L_1 | b.L_1 = (a|b).L_1$ \\
+$L_0$ & $= a.L_1 | b.L_1 = (a|b).L_1$ \\ \\
 
 $L_1$ & $= a.L_1 | b.L_0 | \lambda$ \\
 	  & $= a.L_1 | b.(a|b).L_1 | \lambda$ \\
@@ -116,20 +116,20 @@ $L_1$ & $= a.L_1 | b.L_0 | \lambda$ \\
 	  & $= a^*b.(a|b).L_1 | a^*\lambda$ \\
 	  & $= (a^*b.(a|b))^*.a^*\lambda$ \\
 	  & $= (a^*b.(a|b))^*.a^*$ \\
-	  & $= (a^*ba|a^*bb)^*.a^*$ \\
+	  & $= (a^*ba|a^*bb)^*.a^*$ \\ \\
 
 $L_0$ & $= (a|b)(a^*ba|a^*bb)^*a^*$ \\
 \end{tabular}
 
 \subsubsection{}
 \begin{tabular}{l l}
-$L_1$ & $= a.L_2 | b.L_3$ \\
+$L_1$ & $= a.L_2 | b.L_3$ \\ \\
 
-$L_2$ & $= a.L_1 | b.L_2 | \lambda$ \\
+$L_2$ & $= a.L_1 | b.L_2 | \lambda$ \\ \\
 
-$L_3$ & $= (a|b).L_2$ \\
+$L_3$ & $= (a|b).L_2$ \\ \\
 
-$L_1$ & $= a.L_2 | b(a|b).L2 = (a|b(a|b)).L_2$ \\
+$L_1$ & $= a.L_2 | b(a|b).L2 = (a|b(a|b)).L_2$ \\ \\
 
 $L_2$ & $= a(a|b(a|b)).L_2 | b.L_2 | \lambda$ \\
 	  & $= (a(a|b(a|b))| b).L_2 | \lambda$ \\
@@ -137,3 +137,110 @@ $L_2$ & $= a(a|b(a|b)).L_2 | b.L_2 | \lambda$ \\
 
 $L_1$ & $= (a|b(a|b))(a(a|b(a|b))| b)^*$ \\
 \end{tabular}
+
+\subsubsection{}
+Pasamos a deterministico \\
+
+\begin{tabular}{c | c | c}
+	& a 	& b 	\\
+\hline
+0 	& 1 	& - 	\\
+1 	& 12 	& - 	\\
+12 	& 123 	& 2 	\\
+123 & 123 	& 023 	\\
+2 	& 3 	& 2 	\\
+023 & 13 	& 023 	\\
+3 	& 3 	& 03 	\\
+13 	& 123 	& 03 	\\
+03 	& 13 	& 03 	\\ \\
+\end{tabular}
+
+Y luego resolvemos las ecuaciones \\
+
+\begin{tabular}{l l}
+$L_0$ & $= a.L_1$ \\ \\
+
+$L_1$ & $= a.L_{12}$ \\ \\
+
+$L_{12}$ & $= a.L_{123} | b.L_2$ \\ \\
+
+$L_{123}$ & $= a.L_{123} | b.L_{023}$ \\ \\
+
+$L_2$ & $= a.L_3 | b.L_2$ \\ \\
+
+$L_{023}$ & $= a.L_{13} | b.L_{023}$ \\ \\
+
+$L_3$ & $= a.L_3 | b.L_{03}$ \\ \\
+
+$L_{13}$ & $a.L_{123} | b.L_{03}$ \\ \\
+
+$L_{03}$ & $a.L_{13} | b.L_{03}$ \\ \\
+\end{tabular}
+
+Quedan por resolver las ecuaciones
+
+\setcounter{subsection}{5}
+\subsection{}
+\subsubsection{}
+$R = \{a\}$
+
+\subsubsection{}
+$R = \{a\}, S = \{b\}$
+
+\subsubsection{}
+$R = \{a\}$
+
+\subsubsection{}
+$R = \{a\}, S = \{b\}, T = \{c\}$
+
+$\{a, bc\} \neq \{aa, ac, ba, bc\}$
+
+\subsection{}
+\subsubsection{}
+$R = \{a, \lambda\}$
+
+\subsubsection{}
+$R= \{a\}, S = \{aa\}$
+
+\subsubsection{}
+$R = \{\lambda\}$
+
+$R = \Sigma^*$
+
+\subsubsection{}
+$R = \{a\}^*, S = \{a\}, T = \{a\}$
+
+\subsubsection{}
+$R = \{a\}^*, S = \{\lambda\}$
+
+\subsection{}
+Primero se pasa $L$ a $I(L)$ convirtiendo todos sus estados en finales. Obtenemos la expresion regular de $I(L)$
+
+\begin{tabular}{l l}
+$L_0$ & $= a.L_1 | b.L_3 | \lambda$ \\ \\
+
+$L_1$ & $= c.L_2 | \lambda$ \\ \\
+
+$L_2$ & $= b.L_1 | \lambda$ \\
+	  & $= b.c.L_2 | \lambda$ \\
+	  & $= (bc)^*$ \\ \\
+
+$L_3$ & $= a.L_3 | c.L_1 | \lambda$ \\ \\
+
+$L_1$ & $= c.L_2 | \lambda$ \\
+	  & $= c(bc)^* | \lambda$ \\ \\
+
+$L_3$ & $= a.L_3 | c.L_1 | \lambda$ \\
+	  & $= a.L_3 | c.(c(bc)^* | \lambda) | \lambda$ \\
+	  & $= a.L_3 | cc(bc)^* | c | \lambda$ \\
+	  & $= a.L_3 | (cc(bc)^* | c | \lambda)$ \\
+	  & $= acc(bc)^* | ac | a$ \\ \\
+
+$L_0$ & $= a.L_1 | b.L_3 | \lambda$ \\
+	  & $= a(c(bc)^* | \lambda) | b(acc(bc)^* | ac | a)$ \\
+	  & $= ac(bc)^* | a | bacc(bc)^* | bac | ba$ \\ \\
+\end{tabular}
+
+Por lo tanto $I(L) = ac(bc)^* | a | bacc(bc)^* | bac | ba$ y $I(L)^* = (ac(bc)^* | a | bacc(bc)^* | bac | ba)^*$
+
+\subsection{}
