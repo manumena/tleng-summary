@@ -1,0 +1,38 @@
+\section{Práctica 4}
+\subsubsection{}
+Pasamos a deterministico
+
+\begin{tabular}{c | c | c | c}
+			& a 			& b  	\\
+\hline
+$q_0$ 		& $q_{01}$ 		& $q_0$ 	\\
+$q_{01}$ 	& $q_{012}$		& $q_0$ 	\\
+$q_{012}$ 	& $q_{0123}$ 	& $q_0$ 	\\
+$q_{0123}$ 	& $q_{0123}$ 	& $q_{03}$ 	\\
+$q_{03}$ 	& $q_{013}$ 	& $q_{03}$ 	\\
+$q_{013}$ 	& $q_{0123}$ 	& $q_{03}$ 	\\
+\end{tabular}
+
+Con estados finales $\{q_{0123},q_{03},q_{013}\}$
+
+Luego separamos en clases de equivalencia para minimizar
+
+\begin{tabular}{| c || c | c | c || c | c | c || c | c | c || c |}
+\hline
+			& $\equiv_0$	& $a$	& $b$	& $\equiv_1$	& $a$	& $b$	& $\equiv_2$	& $a$	& $b$	& $\equiv_3$ \\
+\hline			
+$q_0$		& $NF$			& $NF$	& $NF$ 	& $C_1$			& $C_1$ & $C_1$ & $D_1$			& $D_2$ & $D_1$ & $E_1$ \\
+\hline
+$q_{01}$ 	& $NF$			& $NF$	& $NF$ 	& $C_1$ 		& $C_2$ & $C_1$ & $D_2$			& $D_3$ & $D_1$ & $E_2$ \\
+\hline
+$q_{012}$ 	& $NF$ 			& $F$	& $NF$ 	& $C_2$ 		& $C_1$ & $C_1$ & $D_3$			& $D_4$ & $D_1$ & $E_3$ \\
+\hline
+$q_{0123}$ 	& $F$ 			& $F$	& $F$ 	& $C_3$ 		& $C_3$ & $C_3$ & $D_4$			& $D_4$ & $D_4$ & $E_4$ \\
+\hline
+$q_{03}$ 	& $F$ 			& $F$	& $F$ 	& $C_3$ 		& $C_3$ & $C_3$ & $D_4$			& $D_4$ & $D_4$ & $E_4$ \\
+\hline
+$q_{013}$ 	& $F$ 			& $F$	& $F$ 	& $C_3$ 		& $C_3$ & $C_3$ & $D_4$			& $D_4$ & $D_4$ & $E_4$ \\
+\hline
+\end{tabular}
+
+Nos quedamos con los estados $\{E_1,E_2,E_3,E_4\}$ donde $E_4$ es final
