@@ -1,6 +1,87 @@
 \section{Práctica 5}
 \subsection{}
 \subsubsection{}
-$(00)^+$
+Es regular $(00)^+$
 
 \subsubsection{}
+Un lenguaje $L$ es regular si vale 
+
+% ∀ α 􏰃 􏰁α ∈ L ∧ |α| ≥ n􏰂
+% =⇒ ∃x ∃y ∃z 􏰁α = xyz ∧ |xy| ≤ n ∧ |y| ≥ 1 ∧ ∀ i (xy^iz ∈ L)􏰂 􏰄
+
+$\forall \alpha, \alpha \in L \and |\alpha| \geq n \Longrightarrow \exists x \exists y \exists z \alpha = xyz \and |xy| \leq n \and |y| \geq 1 \and \forall i (xy^iz \in L)$
+
+Si $L = \{0^m1^n0^{m+n}\ | m,n \geq 1\}$ es regular, debe ocurrir que para algun $n$, todas las cadenas que pueda formar con longitud $\geq n$ cumplan $\exists x \exists y \exists z \alpha = xyz \and |xy| \leq n \and |y| \geq 1 \and \forall i (xy^iz \in L)$
+
+Consideramos la cadena $\alpha = 0^n1^n0^{2n} = xyz$. Ocurre que $xy$ son todos 0s, por lo que y esta compuesta por uno o mas 0s.
+
+Si tomamos $i = 0$, la cadena $x = 0^j, y = 0^k$ con $j + k \leq n, j \geq 0, k \geq 1$, por lo que $xz = 0^j0^{n - k - j}1^n0^2n = 0^{n - k}1^n0^{2n}$ como $k \geq 1$, $n - k \leq n$ pero para ser aceptado deberia ser $n - k = 2n - n$. Absurdo, por lo tanto $L$ no es regular
+
+\subsubsection{}
+Si $L = \{0^p | p es primo\}$ es regular, debe ocurrir que para algun $n$, todas las cadenas que pueda formar con longitud $\geq n$ cumplan $\exists x \exists y \exists z \alpha = xyz \and |xy| \leq n \and |y| \geq 1 \and \forall i (xy^iz \in L)$
+
+Consideramos $0^p$ con $p$ el siguiente número primo a $n$. $x = 0^j, y = 0^k$ con $j + k \leq n, j \geq 0, k \geq 1$. Por lo que $xy^iz = 0^j0^{ik}0^{p - j - k} = 0^{p + (i - 1)k}$
+
+Supongo que no puede valer para toda $i$ porque los numeros primos no se comportan de manera lineal, por lo que debe existir un $i$ para el cual que $p + (i - 1)k$ no puede ser primo.
+
+\subsubsection{}
+Es regular $(0|1|\lambda)(01|10|11)^*(0|1|\lambda)$
+
+\subsubsection{}
+Considero la cadena $0^n1^n$. Ocurre que $xy$ son todos 0s, por lo que y esta compuesta por uno o mas 0s. 
+
+$xy^iz$ con $i=0$ tendra 1 o más 0s faltantes, dejando de cumplir la igualdad de 0s y 1s, y así no perteneciendo al lenguaje. Por lo que no es regular.
+
+\subsubsection{}
+Si $L = \{\omega \in \{0,1\}^* | |\omega|_0 \neq |\omega|_1\}$ fuera regular, entonces su complemento también lo sería. Pero como vimos en el ejecricio anterior, no lo es. Por lo tanto $L$ no es regular.
+
+\subsubsection{}
+Consideramos $1^n0^{n+1}$. $xy$ estara formada solo por 1s, por lo que $y$ también. Entonces con $i > 1$, se deja de cumplir la condición para $xy^iz$. No es regular.
+
+\subsubsection{}
+Consideremos la cadena $(\prod_{i = 1}^n i)(\prod_{i = 1}^n (n - i))$, es decir, ``123...(n-1)nn(n-1)...321''
+
+$xy$ seran los numeros del 1 a $j$ con $j \leq n$, por lo que $y$ está conformada por alguna cadena empezando por alguno de esos números hasta $j$. Por lo que si tomamos $i = 0$, ocurre que $xy^iz = xz$ deja de tener algunos de los numeros que conformaban $xy$, ya que $|y| \geq 1$, y por lo tanto deja de cumplir la propieda de ser palíndromo. Por lo tanto no es regular.
+
+\subsubsection{}
+Es regular $A = <\{q_0,q_1\}, \{0,1\}, \delta, q_0, \{q_0\}>$ con
+
+$\delta = $
+
+\begin{tabular}{c | c | c}
+		& 0		& 1 	\\
+\hline
+$q_0$	& $q_1$	& $q_0$ \\
+$q_1$	& $q_0$	& $q_1$ \\
+\end{tabular}
+
+\subsubsection{}
+Es regular $A = <\{q_0,q_1,q_2,q_3\}, \{0,1\}, \delta, q_0, \{q_0,q_2,q_3\}>$ con
+
+$\delta = $
+
+\begin{tabular}{c | c | c}
+		& 0		& 1 	\\
+\hline
+$q_0$	& $q_1$	& $q_2$ \\
+$q_1$	& $q_0$	& $q_3$ \\
+$q_2$	& $q_3$	& $q_0$ \\
+$q_3$	& $q_2$	& $q_1$ \\
+\end{tabular}
+
+
+Es regular $A = <\{q_0,q_1,q_2,q_3\}, \{0,1\}, \delta, q_0, \{q_2\}>$ con
+
+$\delta = $
+
+\begin{tabular}{c | c | c}
+		& 0		& 1 	\\
+\hline
+$q_0$	& $q_1$	& $q_2$ \\
+$q_1$	& $q_0$	& $q_3$ \\
+$q_2$	& $q_3$	& $q_0$ \\
+$q_3$	& $q_2$	& $q_1$ \\
+\end{tabular}
+
+\subsubsection{}
+Consideramos $1^n0^{n+1}$. $xy$ esta formada solo por 1s por lo que $y$ también. Con $i = 0$ ocurre que $xy^iz = xz$ donde como $y$ tenia al menos un 1, $xz = 1^k0^{n+1}$, con $k \leq n - 1$, $|xz|_0 = n + 1, |xz|_1 = k$ y por lo tanto, para el prefijo $\gamma = xz, |\gamma|_0 = n + 1, |\gamma|_1 = k$ por lo que $|\gamma|_0 - |\gamma|_1 = n + 1 - k \geq n + 1 - (n - 1) = 2$, por lo que $xy^iz$ no es parte del lenguaje para $i = 0$ y entonces no es regular.
