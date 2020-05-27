@@ -85,3 +85,8 @@ $q_3$	& $q_2$	& $q_1$ \\
 
 \subsubsection{}
 Consideramos $1^n0^{n+1}$. $xy$ esta formada solo por 1s por lo que $y$ también. Con $i = 0$ ocurre que $xy^iz = xz$ donde como $y$ tenia al menos un 1, $xz = 1^k0^{n+1}$, con $k \leq n - 1$, $|xz|_0 = n + 1, |xz|_1 = k$ y por lo tanto, para el prefijo $\gamma = xz, |\gamma|_0 = n + 1, |\gamma|_1 = k$ por lo que $|\gamma|_0 - |\gamma|_1 = n + 1 - k \geq n + 1 - (n - 1) = 2$, por lo que $xy^iz$ no es parte del lenguaje para $i = 0$ y entonces no es regular.
+
+\subsubsection{}
+Considero la cadena $1^n0^n$. Ocurre que $xy$ son todos 0s, por lo que y esta compuesta por uno o mas 0s. 
+
+$xy^iz$ con $i=0$ tendra 1 o más 0s faltantes, dejando de cumplir la igualdad de 0s y 1s, y así no perteneciendo al lenguaje. Por lo que no es regular.
