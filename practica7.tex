@@ -1,0 +1,98 @@
+\setcounter{section}{6}
+\section{Práctica 7}
+\subsection{}
+$A \longrightarrow [] | [B]$ \\
+$B \longrightarrow B , C | C$ \\
+$C \longrightarrow id | A$ \\	
+
+
+Derivaciones a izquierda para $A_3 = [a , [b , c] , d]$
+
+$A \longrightarrow [B] \longrightarrow [B, C] \longrightarrow [B , C , C] \longrightarrow [C , C , C] \longrightarrow [a , C , C] \longrightarrow [a , A , C] \longrightarrow [a , [B] , C] \longrightarrow [a, [B , C] , C] \longrightarrow [a , [C , C] , C] \longrightarrow [a , [b , C] , C] \longrightarrow [a , [b , c] , C] \longrightarrow [a , [b , c] , d]$
+
+\subsection{}
+$A \longrightarrow A B | B$ \\
+$B \longrightarrow sym | num | str | () | (A)$ \\
+
+Derivaciones para $num$
+
+$A \longrightarrow B \longrightarrow num$
+
+Derivaciones para $()$
+
+$A \longrightarrow B \longrightarrow ()$
+
+Derivaciones para $( sym () num str )$
+
+$A \longrightarrow B \longrightarrow (A) \longrightarrow (A B) \longrightarrow (A B B) \longrightarrow (A B B B) \longrightarrow (B B B B) \longrightarrow (sym B B B) \longrightarrow (sym () B B) \longrightarrow (sym () num B) \longrightarrow (sym () num str)$
+
+\subsection{}
+$A \longrightarrow AB | B$ \\
+$B \longrightarrow C_num | C$ \\
+$C \longrightarrow elem | (AB)$ \\
+
+\subsection{}
+$A \longrightarrow A + B | A - B | B$ \\
+$B \longrightarrow B C | B * C | B / C | C$ \\
+$C \longrightarrow id | (A)$ \\
+
+\begin{tabular}{l l}
+$A$ & $\longrightarrow A + B$ \\ 
+	& $\longrightarrow A - B + B$ \\
+	& $\longrightarrow B - B + B$ \\
+	& $\longrightarrow C - B + B$ \\
+	& $\longrightarrow id - B + B$ \\
+	& $\longrightarrow id - B * C + B$ \\
+	& $\longrightarrow id - B / C * C + B$ \\
+	& $\longrightarrow id - B C / C * C + B$ \\
+	& $\longrightarrow id - C C / C * C + B$ \\
+	& $\longrightarrow id - id C / C * C + B$ \\
+	& $\longrightarrow id - id id / C * C + B$ \\
+	& $\longrightarrow id - id id / id * C + B$ \\
+	& $\longrightarrow id - id id / id * id + B$ \\
+	& $\longrightarrow id - id id / id * id + C$ \\
+	& $\longrightarrow id - id id / id * id + id$ \\
+\end{tabular}
+
+\subsection{}
+$A \longrightarrow B ? B : A | B$ \\
+$B \longrightarrow B + C | C$ \\
+$C \longrightarrow id | (A)$ \\
+
+\subsection{}
+\subsubsection{}
+$A \longrightarrow B \ \ key \ \ A | B$ \\
+$B \longrightarrow B \ \ binOp \ \ C | C$ \\
+$C \longrightarrow C \ \ id | D$ \\
+$D \longrightarrow id | int | (A)$ \\
+
+\subsubsection{}
+\begin{tabular}{l l}
+$A$ & $\longrightarrow B \ \ at: A$ \\
+	& $\longrightarrow C \ \ at: A$ \\
+	& $\longrightarrow D \ \ at: A$ \\
+	& $\longrightarrow a \ \ at: A$ \\
+	& $\longrightarrow a \ \ at: B \ \ put: A$ \\
+	& $\longrightarrow a \ \ at: B + C \ \ put: A$ \\
+	& $\longrightarrow a \ \ at: C + C \ \ put: A$ \\
+	& $\longrightarrow a \ \ at: D + C \ \ put: A$ \\
+	& $\longrightarrow a \ \ at: x + C \ \ put: A$ \\
+	& $\longrightarrow a \ \ at: x + D \ \ put: A$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: A$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: B$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: C$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: C \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: D \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (A) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (B) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (B / C) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (B + C / C) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (C + C / C) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (D + C / C) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (b + C / C) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (b + D / C) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (b + c / C) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (b + c / C \ \ sqrt) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (b + c / D \ \ sqrt) \ \ truncate$ \\
+	& $\longrightarrow a \ \ at: x + 5 \ \ put: (b + c / d \ \ sqrt) \ \ truncate$ \\
+\end{tabular}
